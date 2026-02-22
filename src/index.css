@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Press Start 2P', cursive;
+  image-rendering: pixelated;
+}
+
+/* Custom scrollbar for the pixel aesthetic */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f1a;
+  border: 2px solid #3730a3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3730a3;
+  border: 2px solid #6366f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Selection color */
+::selection {
+  background: #4ade80;
+  color: #1a1a2e;
+}
+
+/* Focus ring override */
+*:focus {
+  outline: none;
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* CRT flicker effect - subtle */
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+body {
+  animation: flicker 0.15s infinite;
+  background: #0a0a14;
+}
+
+/* Input placeholder styling */
+input::placeholder {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+}
+
+/* Button press effect */
+button:active {
+  transform: translateY(2px);
+}
+
+/* Hide mobile tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
